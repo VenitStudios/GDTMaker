@@ -211,5 +211,4 @@ func brush_type_selected(index: int) -> void:
 		print(current_brush)
 
 func mouse_inside_editor() -> bool:
-	print(has_focus())
 	return has_focus()
