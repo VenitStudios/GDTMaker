@@ -17,7 +17,7 @@ var saved : bool = false
 
 var brush_radius : int = 1 : 
 	set(value):
-		brush_radius = clamp(value, 0, 128)
+		brush_radius = clamp(value, 1, 128)
 		%BrushSize.value = value
 
 var Brushes : Dictionary[String, Callable] = \
@@ -26,7 +26,7 @@ var Brushes : Dictionary[String, Callable] = \
 	"circle_brush": circle_brush
 }
 
-var current_brush : Callable = Brushes.box
+var current_brush : Callable = Brushes.box_brush
 
 func load_image(path : String):
 	current_brush = box_brush
@@ -65,7 +65,7 @@ func update_texture_rect():
 	texture_rect.texture = ImageTexture.create_from_image(current_image)
 
 func _process(delta: float) -> void:
-	if get_parent().plugin && !get_parent().plugin.currently_visible: 
+	if get_parent().plugin && !get_parent().plugin.currently_visible and mouse_inside_editor(): 
 		return
 	
 	%FileName.text = str(current_path).get_file()
@@ -73,11 +73,14 @@ func _process(delta: float) -> void:
 	if texture_rect && current_image: 
 		texture_rect.size = current_image.get_size() * zoom_amount
 		texture_rect.position = size / 2 - (texture_rect.size / 2) + (image_offset)
+		%Checkerboard.material.set_shader_parameter("width", current_image.get_width())
+		%Checkerboard.material.set_shader_parameter("height", current_image.get_height())
+		
 		%ZoomAmt.text = str(int(zoom_amount * 100), "%")
 		%PanAmt.text = str(image_offset.round())
 		
 	if texture_rect && current_image:
-		zoom_amount = clamp(zoom_amount, 0.05, snappedf(current_image.get_width() * 1.5, 0.1))
+		zoom_amount = clamp(zoom_amount, 0.05, snappedf(current_image.get_width(), 0.1))
 		
 	if texture_rect && texture_rect.get_global_rect().has_point(get_global_mouse_position()):
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) == left_mouse_state:
@@ -118,7 +121,6 @@ func box_brush(center_pixel : Vector2i, radius : int, color : Color):
 				current_image.set_pixel(x, y, color)
 
 func circle_brush(center_pixel : Vector2i, radius : int, color : Color):
-	print("circle")
 	radius /= 2
 	for y in range(center_pixel.y - radius, center_pixel.y + radius + 1):
 		for x in range(center_pixel.x - radius, center_pixel.x + radius + 1):
@@ -128,25 +130,22 @@ func circle_brush(center_pixel : Vector2i, radius : int, color : Color):
 					current_image.set_pixel(x, y, color)
 
 func _input(event: InputEvent) -> void:
-	if not is_visible_in_tree() or not texture_rect or not current_image && !get_parent().plugin.visible: return
+	if not is_visible_in_tree() or not texture_rect or not current_image && !get_parent().plugin.currently_visible: return
 	if event is InputEventMouseButton && !%SidePanel.get_global_rect().has_point(get_global_mouse_position()):
 		match event.button_index:
 			4:
 				if !Input.is_key_pressed(KEY_CTRL):
 					zoom_amount += 0.05 * zoom_amount * 2
-					image_offset -= (texture_rect.global_position + (texture_rect.size / 2)).direction_to(get_global_mouse_position()) \
-					* zoom_amount * 2
 				else:
 					brush_radius += 1 if event.is_pressed() else 0
 			5:
 				if !Input.is_key_pressed(KEY_CTRL):
 					zoom_amount -= 0.05 * zoom_amount * 2
-					image_offset += (texture_rect.global_position + (texture_rect.size / 2)).direction_to(get_global_mouse_position()) \
-					* zoom_amount * 2
 				else:
 					brush_radius -= 1 if event.is_pressed() else 0
 				
 	if event is InputEventMouseMotion:
+		queue_redraw()
 		match event.button_mask:
 			4:
 				image_offset += event.relative
@@ -204,10 +203,13 @@ func file_menu_item_selected(index: int) -> void:
 			quit()
 	%FileMenu.selected = 0
 
-
 func _on_brush_size_value_changed(value: float) -> void: brush_radius = value
 func brush_type_selected(index: int) -> void: 
 	var brstr = %BrushType.get_item_text(index).to_lower() + "_brush"
 	if Brushes.has(brstr):
 		current_brush = Brushes[brstr]
 		print(current_brush)
+
+func mouse_inside_editor() -> bool:
+	print(has_focus())
+	return has_focus()

@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7o68d0pnaeks"]
+[gd_scene load_steps=12 format=3 uid="uid://b7o68d0pnaeks"]
 
 [ext_resource type="Script" uid="uid://ceyv070uravuk" path="res://addons/gdtmaker/tmaker.gd" id="1_figme"]
 [ext_resource type="Script" uid="uid://cx0vc2785p2xo" path="res://addons/gdtmaker/TmakerBG.gd" id="2_4cn85"]
 [ext_resource type="Script" uid="uid://biw5tpo00n8ix" path="res://addons/gdtmaker/NIDB.gd" id="3_y2mw0"]
 [ext_resource type="Script" uid="uid://bfn46dx822oa2" path="res://addons/gdtmaker/sprite_editor.gd" id="4_qsxdy"]
+[ext_resource type="Shader" uid="uid://b1k12xpv5fagd" path="res://addons/gdtmaker/Checkerboard.gdshader" id="5_gpy31"]
 [ext_resource type="Script" uid="uid://be8pcd5y0aa45" path="res://addons/gdtmaker/ColorGrid.gd" id="6_o641k"]
+[ext_resource type="Script" uid="uid://dvuuo045q3wis" path="res://addons/gdtmaker/HighlightOverlay.gd" id="6_wihru"]
 
-[sub_resource type="Image" id="Image_fxhm7"]
+[sub_resource type="Image" id="Image_gpy31"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 3, 224, 224, 224, 105, 224, 224, 224, 192, 224, 224, 224, 244, 224, 224, 224, 238, 224, 224, 224, 197, 224, 224, 224, 105, 255, 255, 255, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 233, 233, 233, 23, 225, 225, 225, 207, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 198, 226, 226, 226, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 6, 224, 224, 224, 205, 224, 224, 224, 255, 224, 224, 224, 218, 225, 225, 225, 83, 237, 237, 237, 14, 237, 237, 237, 14, 224, 224, 224, 82, 224, 224, 224, 220, 224, 224, 224, 255, 224, 224, 224, 197, 255, 255, 255, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 225, 225, 225, 102, 224, 224, 224, 255, 224, 224, 224, 218, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 16, 224, 224, 224, 221, 224, 224, 224, 255, 225, 225, 225, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 198, 224, 224, 224, 255, 225, 225, 225, 84, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 226, 226, 226, 86, 224, 224, 224, 255, 224, 224, 224, 194, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 1, 255, 255, 255, 4, 224, 224, 224, 238, 224, 224, 224, 255, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 229, 229, 229, 19, 224, 224, 224, 255, 224, 224, 224, 233, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 160, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 225, 225, 225, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 20, 224, 224, 224, 255, 224, 224, 224, 237, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 10, 224, 224, 224, 213, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 212, 230, 230, 230, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 90, 224, 224, 224, 255, 224, 224, 224, 185, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 225, 225, 225, 42, 224, 224, 224, 245, 224, 224, 224, 245, 225, 225, 225, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 232, 232, 232, 22, 224, 224, 224, 224, 224, 224, 224, 255, 224, 224, 224, 98, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 96, 226, 226, 226, 95, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 20, 224, 224, 224, 88, 224, 224, 224, 221, 224, 224, 224, 255, 225, 225, 225, 199, 255, 255, 255, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 200, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 236, 224, 224, 224, 195, 224, 224, 224, 96, 255, 255, 255, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "format": "RGBA8",
@@ -15,8 +17,8 @@ data = {
 "width": 16
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_wihru"]
-image = SubResource("Image_fxhm7")
+[sub_resource type="ImageTexture" id="ImageTexture_gpy31"]
+image = SubResource("Image_gpy31")
 
 [sub_resource type="GDScript" id="GDScript_kjq7f"]
 script/source = "@tool extends Button
@@ -24,6 +26,13 @@ script/source = "@tool extends Button
 func _enter_tree() -> void:
 	self.icon = EditorInterface.get_editor_theme().get_icon(\"Reload\", \"EditorIcons\")
 "
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfpx0"]
+shader = ExtResource("5_gpy31")
+shader_parameter/width = 0.0
+shader_parameter/height = 0.0
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0.7, 0.7, 0.7, 1)
 
 [node name="TMakerScene" type="Control"]
 layout_mode = 3
@@ -183,7 +192,7 @@ anchor_left = 0.388889
 anchor_top = 0.0617284
 anchor_right = 0.416667
 anchor_bottom = 0.111111
-icon = SubResource("ImageTexture_wihru")
+icon = SubResource("ImageTexture_gpy31")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -235,6 +244,27 @@ color = Color(0.180392, 0.180392, 0.180392, 2)
 script = ExtResource("2_4cn85")
 multiplier = 2.0
 metadata/_custom_type_script = "uid://cx0vc2785p2xo"
+
+[node name="Checkerboard" type="ColorRect" parent="SpriteEditor/TMakerBG/TextureRect"]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_vfpx0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HighlightOverlay" type="Control" parent="SpriteEditor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_wihru")
 
 [node name="SidePanel" type="Control" parent="SpriteEditor"]
 unique_name_in_owner = true
