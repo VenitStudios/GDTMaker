@@ -1,0 +1,455 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7o68d0pnaeks"]
+
+[ext_resource type="Script" uid="uid://ceyv070uravuk" path="res://addons/gdtmaker/tmaker.gd" id="1_figme"]
+[ext_resource type="Script" uid="uid://cx0vc2785p2xo" path="res://addons/gdtmaker/TmakerBG.gd" id="2_4cn85"]
+[ext_resource type="Script" uid="uid://biw5tpo00n8ix" path="res://addons/gdtmaker/NIDB.gd" id="3_y2mw0"]
+[ext_resource type="Script" uid="uid://bfn46dx822oa2" path="res://addons/gdtmaker/sprite_editor.gd" id="4_qsxdy"]
+[ext_resource type="Script" uid="uid://be8pcd5y0aa45" path="res://addons/gdtmaker/ColorGrid.gd" id="6_o641k"]
+
+[sub_resource type="Image" id="Image_fxhm7"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 3, 224, 224, 224, 105, 224, 224, 224, 192, 224, 224, 224, 244, 224, 224, 224, 238, 224, 224, 224, 197, 224, 224, 224, 105, 255, 255, 255, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 233, 233, 233, 23, 225, 225, 225, 207, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 198, 226, 226, 226, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 6, 224, 224, 224, 205, 224, 224, 224, 255, 224, 224, 224, 218, 225, 225, 225, 83, 237, 237, 237, 14, 237, 237, 237, 14, 224, 224, 224, 82, 224, 224, 224, 220, 224, 224, 224, 255, 224, 224, 224, 197, 255, 255, 255, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 225, 225, 225, 102, 224, 224, 224, 255, 224, 224, 224, 218, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 16, 224, 224, 224, 221, 224, 224, 224, 255, 225, 225, 225, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 198, 224, 224, 224, 255, 225, 225, 225, 84, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 226, 226, 226, 86, 224, 224, 224, 255, 224, 224, 224, 194, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 1, 255, 255, 255, 4, 224, 224, 224, 238, 224, 224, 224, 255, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 229, 229, 229, 19, 224, 224, 224, 255, 224, 224, 224, 233, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 160, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 225, 225, 225, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 20, 224, 224, 224, 255, 224, 224, 224, 237, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 10, 224, 224, 224, 213, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 212, 230, 230, 230, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 90, 224, 224, 224, 255, 224, 224, 224, 185, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 225, 225, 225, 42, 224, 224, 224, 245, 224, 224, 224, 245, 225, 225, 225, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 232, 232, 232, 22, 224, 224, 224, 224, 224, 224, 224, 255, 224, 224, 224, 98, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 96, 226, 226, 226, 95, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 20, 224, 224, 224, 88, 224, 224, 224, 221, 224, 224, 224, 255, 225, 225, 225, 199, 255, 255, 255, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 200, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 236, 224, 224, 224, 195, 224, 224, 224, 96, 255, 255, 255, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_wihru"]
+image = SubResource("Image_fxhm7")
+
+[sub_resource type="GDScript" id="GDScript_kjq7f"]
+script/source = "@tool extends Button
+
+func _enter_tree() -> void:
+	self.icon = EditorInterface.get_editor_theme().get_icon(\"Reload\", \"EditorIcons\")
+"
+
+[node name="TMakerScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_figme")
+
+[node name="TextureScreen" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+script = ExtResource("2_4cn85")
+metadata/_custom_type_script = "uid://cx0vc2785p2xo"
+
+[node name="Title" type="Label" parent="TextureScreen"]
+layout_mode = 2
+anchor_left = 0.0555556
+anchor_top = 0.0617284
+anchor_right = 0.472222
+anchor_bottom = 0.111111
+grow_horizontal = 2
+grow_vertical = 2
+text = "Open Existing From Project"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title2" type="Label" parent="TextureScreen"]
+layout_mode = 2
+anchor_left = 0.0555556
+anchor_top = 0.691358
+anchor_right = 0.472222
+anchor_bottom = 0.740741
+grow_horizontal = 2
+grow_vertical = 2
+text = "-- OR --"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ExistingList" type="MarginContainer" parent="TextureScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555556
+anchor_top = 0.148148
+anchor_right = 0.472222
+anchor_bottom = 0.691358
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TextureScreen/ExistingList"]
+layout_mode = 2
+
+[node name="TextureGridContainer" type="GridContainer" parent="TextureScreen/ExistingList/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="NewImageSettings" type="Control" parent="TextureScreen"]
+layout_mode = 1
+anchor_left = 0.0555556
+anchor_top = 0.790123
+anchor_right = 0.472222
+anchor_bottom = 0.950617
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Title3" type="Label" parent="TextureScreen/NewImageSettings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.233333
+anchor_right = 0.466667
+anchor_bottom = 0.230769
+grow_horizontal = 2
+text = "Width"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title4" type="Label" parent="TextureScreen/NewImageSettings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.733333
+anchor_bottom = 0.230769
+grow_horizontal = 2
+text = "Height"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NewWidth" type="SpinBox" parent="TextureScreen/NewImageSettings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.233333
+anchor_top = 0.230769
+anchor_right = 0.5
+anchor_bottom = 0.538462
+max_value = 128.0
+value = 128.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NewHeight" type="SpinBox" parent="TextureScreen/NewImageSettings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.230769
+anchor_right = 0.766667
+anchor_bottom = 0.538462
+max_value = 128.0
+value = 128.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MakeNew" type="Button" parent="TextureScreen/NewImageSettings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.615385
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Create New Image
+"
+script = ExtResource("3_y2mw0")
+metadata/_edit_use_anchors_ = true
+
+[node name="FileDialog" type="FileDialog" parent="TextureScreen/NewImageSettings/MakeNew"]
+title = "Select Path"
+initial_position = 3
+size = Vector2i(719, 360)
+current_screen = 0
+ok_button_text = "Create New"
+dialog_hide_on_ok = true
+
+[node name="Reload" type="Button" parent="TextureScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388889
+anchor_top = 0.0617284
+anchor_right = 0.416667
+anchor_bottom = 0.111111
+icon = SubResource("ImageTexture_wihru")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = SubResource("GDScript_kjq7f")
+metadata/_edit_use_anchors_ = true
+
+[node name="SpriteEditor" type="Control" parent="."]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_qsxdy")
+
+[node name="TMakerBG" type="ColorRect" parent="SpriteEditor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.135294, 0.135294, 0.135294, 1.5)
+script = ExtResource("2_4cn85")
+multiplier = 1.5
+metadata/_custom_type_script = "uid://cx0vc2785p2xo"
+
+[node name="TextureRect" type="TextureRect" parent="SpriteEditor/TMakerBG"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TMakerBG" type="ColorRect" parent="SpriteEditor/TMakerBG/TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.180392, 0.180392, 2)
+script = ExtResource("2_4cn85")
+multiplier = 2.0
+metadata/_custom_type_script = "uid://cx0vc2785p2xo"
+
+[node name="SidePanel" type="Control" parent="SpriteEditor"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_right = 0.166667
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TMakerBG" type="ColorRect" parent="SpriteEditor/SidePanel"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+script = ExtResource("2_4cn85")
+metadata/_custom_type_script = "uid://cx0vc2785p2xo"
+metadata/_edit_use_anchors_ = true
+
+[node name="Palette" type="Control" parent="SpriteEditor/SidePanel"]
+layout_mode = 2
+anchors_preset = 0
+anchor_top = 0.493827
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SpriteEditor/SidePanel/Palette"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="SpriteEditor/SidePanel/Palette/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+script = ExtResource("6_o641k")
+
+[node name="Brushes" type="Control" parent="SpriteEditor/SidePanel"]
+anchors_preset = 0
+anchor_top = 0.0987654
+anchor_right = 0.999998
+anchor_bottom = 0.395062
+metadata/_edit_use_anchors_ = true
+
+[node name="BrushType" type="OptionButton" parent="SpriteEditor/SidePanel/Brushes"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0833333
+anchor_top = 0.125
+anchor_right = 0.916667
+anchor_bottom = 0.291667
+alignment = 1
+selected = 0
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Box"
+popup/item_0/id = 0
+popup/item_1/text = "Circle"
+popup/item_1/id = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BrushType2" type="OptionButton" parent="SpriteEditor/SidePanel/Brushes"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0833333
+anchor_top = 0.125
+anchor_right = 0.916667
+anchor_bottom = 0.291667
+alignment = 1
+selected = 0
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Box"
+popup/item_0/id = 0
+popup/item_1/text = "Circle"
+popup/item_1/id = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="SpriteEditor/SidePanel/Brushes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.125
+text = "Brush Type"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BrushSize" type="SpinBox" parent="SpriteEditor/SidePanel/Brushes"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0833333
+anchor_top = 0.333333
+anchor_right = 1.0
+anchor_bottom = 0.5
+min_value = 1.0
+max_value = 128.0
+value = 1.0
+alignment = 1
+prefix = "Brush Size:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Dock" type="Control" parent="SpriteEditor"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.0493827
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TMakerBG2" type="ColorRect" parent="SpriteEditor/Dock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+script = ExtResource("2_4cn85")
+metadata/_custom_type_script = "uid://cx0vc2785p2xo"
+
+[node name="ZoomAmt" type="Label" parent="SpriteEditor/Dock"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.944444
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100 %"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ZoomReset" type="Button" parent="SpriteEditor/Dock/ZoomAmt"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="PanAmt" type="Label" parent="SpriteEditor/Dock"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.833333
+anchor_right = 0.944444
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100 %"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PanReset" type="Button" parent="SpriteEditor/Dock/PanAmt"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="FileMenu" type="OptionButton" parent="SpriteEditor/Dock"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.111111
+anchor_bottom = 1.0
+flat = true
+alignment = 1
+selected = 0
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "File"
+popup/item_0/id = 0
+popup/item_1/text = "Save (Ctrl+S)"
+popup/item_1/id = 1
+popup/item_2/text = "Save & Exit (Ctrl+E)"
+popup/item_2/id = 2
+popup/item_3/text = "Exit Without Save"
+popup/item_3/id = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="FileName" type="Label" parent="SpriteEditor/Dock"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333333
+anchor_right = 0.666667
+anchor_bottom = 1.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureScreen/Reload" to="." method="_on_reload_pressed"]
+[connection signal="item_selected" from="SpriteEditor/SidePanel/Brushes/BrushType" to="SpriteEditor" method="brush_type_selected"]
+[connection signal="item_selected" from="SpriteEditor/SidePanel/Brushes/BrushType2" to="SpriteEditor" method="brush_type_selected"]
+[connection signal="value_changed" from="SpriteEditor/SidePanel/Brushes/BrushSize" to="SpriteEditor" method="_on_brush_size_value_changed"]
+[connection signal="pressed" from="SpriteEditor/Dock/ZoomAmt/ZoomReset" to="SpriteEditor" method="zoom_reset"]
+[connection signal="pressed" from="SpriteEditor/Dock/PanAmt/PanReset" to="SpriteEditor" method="pan_reset"]
+[connection signal="item_selected" from="SpriteEditor/Dock/FileMenu" to="SpriteEditor" method="file_menu_item_selected"]
