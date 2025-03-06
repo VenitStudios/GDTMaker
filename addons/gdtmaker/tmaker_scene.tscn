@@ -202,6 +202,7 @@ script = SubResource("GDScript_kjq7f")
 metadata/_edit_use_anchors_ = true
 
 [node name="SpriteEditor" type="Control" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
