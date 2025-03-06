@@ -8,7 +8,8 @@ func save_palette() -> void:
 	%ColorGrid.save_colors_to_project(%SPName.text)
 
 func load_palettes() -> void:
-	palettes = ProjectSettings.get_setting("TMaker/general/Palettes")
+	if ProjectSettings.has_setting("TMaker/general/Palettes"):
+		palettes = ProjectSettings.get_setting("TMaker/general/Palettes")
 
 func palette_options_item_selected(index: int) -> void:
 	var palette = $PaletteOptions.get_item_text(index)

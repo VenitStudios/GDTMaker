@@ -65,7 +65,7 @@ func update_texture_rect():
 	texture_rect.texture = ImageTexture.create_from_image(current_image)
 
 func _process(delta: float) -> void:
-	if get_parent().plugin && !get_parent().plugin.currently_visible and not mouse_inside_editor(): 
+	if get_parent().plugin && !get_parent().plugin.currently_visible or not mouse_inside_editor(): 
 		return
 	
 	%FileName.text = str(current_path).get_file()
