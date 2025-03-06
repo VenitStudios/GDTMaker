@@ -134,14 +134,14 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && !%SidePanel.get_global_rect().has_point(get_global_mouse_position()):
 		match event.button_index:
 			4:
-				if !Input.is_key_pressed(KEY_CTRL):
+				if Input.is_key_pressed(KEY_SHIFT):
 					zoom_amount += 0.05 * zoom_amount * 2
-				else:
+				if Input.is_key_pressed(KEY_CTRL):
 					brush_radius += 1 if event.is_pressed() else 0
 			5:
-				if !Input.is_key_pressed(KEY_CTRL):
+				if Input.is_key_pressed(KEY_SHIFT):
 					zoom_amount -= 0.05 * zoom_amount * 2
-				else:
+				if Input.is_key_pressed(KEY_CTRL):
 					brush_radius -= 1 if event.is_pressed() else 0
 				
 	if event is InputEventMouseMotion:
@@ -208,7 +208,7 @@ func brush_type_selected(index: int) -> void:
 	var brstr = %BrushType.get_item_text(index).to_lower() + "_brush"
 	if Brushes.has(brstr):
 		current_brush = Brushes[brstr]
-		print(current_brush)
+
 
 func mouse_inside_editor() -> bool:
 	return has_focus()

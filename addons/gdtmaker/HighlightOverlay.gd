@@ -1,7 +1,7 @@
 @tool extends Control
 
 func _process(delta: float) -> void:
-	if get_node("../../").plugin.currently_visible:
+	if get_node("../../").plugin && get_node("../../").plugin.currently_visible:
 		queue_redraw()
 
 func _draw() -> void:
@@ -17,6 +17,7 @@ func _draw() -> void:
 			draw_circle(center_pixel + ( Vector2.ONE * parent.brush_radius * parent.zoom_amount / 2), parent.brush_radius * parent.zoom_amount / 2, color)
 
 func to_global(node : TextureRect) -> Vector2:
+	if not node: return Vector2.ZERO
 	var global_offset = node.position
 	var mouse_position = node.get_local_mouse_position()
 	var global_pos = global_offset - (Vector2.ONE * get_parent().brush_radius * get_parent().zoom_amount / 2)

@@ -36,9 +36,9 @@ func _get_plugin_icon(): return EditorInterface.get_editor_theme().get_icon("Edi
 
 func _check_for_settings():
 	
-	if not ProjectSettings.has_setting("TMaker/texture_paths"): 
-		ProjectSettings.set_setting("TMaker/texture_paths", PackedStringArray(["res://"]))
-	if not ProjectSettings.has_setting("TMaker/texture_extensions"): 
-		ProjectSettings.set_setting("TMaker/texture_extensions", [".png", ".jpg", ".jpeg", ".webp", ".exr"])
+	if not ProjectSettings.has_setting("TMaker/general/texture_paths"): 
+		ProjectSettings.set_setting("TMaker/general/texture_paths", PackedStringArray(["res://"]))
+	if not ProjectSettings.has_setting("TMaker/general/texture_extensions"): 
+		ProjectSettings.set_setting("TMaker/general/texture_extensions", [".png", ".jpg", ".jpeg", ".webp", ".exr"])
 	
 	

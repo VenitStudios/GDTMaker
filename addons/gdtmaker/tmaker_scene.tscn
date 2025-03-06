@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7o68d0pnaeks"]
+[gd_scene load_steps=14 format=3 uid="uid://b7o68d0pnaeks"]
 
 [ext_resource type="Script" uid="uid://ceyv070uravuk" path="res://addons/gdtmaker/tmaker.gd" id="1_figme"]
 [ext_resource type="Script" uid="uid://cx0vc2785p2xo" path="res://addons/gdtmaker/TmakerBG.gd" id="2_4cn85"]
@@ -7,8 +7,10 @@
 [ext_resource type="Shader" uid="uid://b1k12xpv5fagd" path="res://addons/gdtmaker/Checkerboard.gdshader" id="5_gpy31"]
 [ext_resource type="Script" uid="uid://be8pcd5y0aa45" path="res://addons/gdtmaker/ColorGrid.gd" id="6_o641k"]
 [ext_resource type="Script" uid="uid://dvuuo045q3wis" path="res://addons/gdtmaker/HighlightOverlay.gd" id="6_wihru"]
+[ext_resource type="Script" uid="uid://d3hqq8dif36g2" path="res://addons/gdtmaker/PaletteManager.gd" id="7_vfpx0"]
+[ext_resource type="Texture2D" uid="uid://b1b8k40cxil8a" path="res://addons/gdtmaker/MethedOutGodot.png" id="9_21mju"]
 
-[sub_resource type="Image" id="Image_gpy31"]
+[sub_resource type="Image" id="Image_21mju"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 3, 224, 224, 224, 105, 224, 224, 224, 192, 224, 224, 224, 244, 224, 224, 224, 238, 224, 224, 224, 197, 224, 224, 224, 105, 255, 255, 255, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 233, 233, 233, 23, 225, 225, 225, 207, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 198, 226, 226, 226, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 6, 224, 224, 224, 205, 224, 224, 224, 255, 224, 224, 224, 218, 225, 225, 225, 83, 237, 237, 237, 14, 237, 237, 237, 14, 224, 224, 224, 82, 224, 224, 224, 220, 224, 224, 224, 255, 224, 224, 224, 197, 255, 255, 255, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 225, 225, 225, 102, 224, 224, 224, 255, 224, 224, 224, 218, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 16, 224, 224, 224, 221, 224, 224, 224, 255, 225, 225, 225, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 198, 224, 224, 224, 255, 225, 225, 225, 84, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 226, 226, 226, 86, 224, 224, 224, 255, 224, 224, 224, 194, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 1, 255, 255, 255, 4, 224, 224, 224, 238, 224, 224, 224, 255, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 229, 229, 229, 19, 224, 224, 224, 255, 224, 224, 224, 233, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 160, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 225, 225, 225, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 20, 224, 224, 224, 255, 224, 224, 224, 237, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 10, 224, 224, 224, 213, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 212, 230, 230, 230, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 90, 224, 224, 224, 255, 224, 224, 224, 185, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 225, 225, 225, 42, 224, 224, 224, 245, 224, 224, 224, 245, 225, 225, 225, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 232, 232, 232, 22, 224, 224, 224, 224, 224, 224, 224, 255, 224, 224, 224, 98, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 96, 226, 226, 226, 95, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 230, 230, 230, 20, 224, 224, 224, 88, 224, 224, 224, 221, 224, 224, 224, 255, 225, 225, 225, 199, 255, 255, 255, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 200, 227, 227, 227, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 236, 224, 224, 224, 195, 224, 224, 224, 96, 255, 255, 255, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "format": "RGBA8",
@@ -17,8 +19,8 @@ data = {
 "width": 16
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_gpy31"]
-image = SubResource("Image_gpy31")
+[sub_resource type="ImageTexture" id="ImageTexture_4srph"]
+image = SubResource("Image_21mju")
 
 [sub_resource type="GDScript" id="GDScript_kjq7f"]
 script/source = "@tool extends Button
@@ -192,7 +194,7 @@ anchor_left = 0.388889
 anchor_top = 0.0617284
 anchor_right = 0.416667
 anchor_bottom = 0.111111
-icon = SubResource("ImageTexture_gpy31")
+icon = SubResource("ImageTexture_4srph")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -200,7 +202,6 @@ script = SubResource("GDScript_kjq7f")
 metadata/_edit_use_anchors_ = true
 
 [node name="SpriteEditor" type="Control" parent="."]
-visible = false
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -289,27 +290,57 @@ metadata/_edit_use_anchors_ = true
 [node name="Palette" type="Control" parent="SpriteEditor/SidePanel"]
 layout_mode = 2
 anchors_preset = 0
-anchor_top = 0.493827
-anchor_right = 1.0
+anchor_top = 0.395062
+anchor_right = 0.999998
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("7_vfpx0")
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SpriteEditor/SidePanel/Palette"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.163265
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="GridContainer" type="GridContainer" parent="SpriteEditor/SidePanel/Palette/ScrollContainer"]
+[node name="ColorGrid" type="GridContainer" parent="SpriteEditor/SidePanel/Palette/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 4
+columns = 6
 script = ExtResource("6_o641k")
+
+[node name="SavePalette" type="Button" parent="SpriteEditor/SidePanel/Palette"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 0.0816327
+text = "Save"
+metadata/_edit_use_anchors_ = true
+
+[node name="SPName" type="LineEdit" parent="SpriteEditor/SidePanel/Palette/SavePalette"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 4.0
+anchor_bottom = 1.0
+placeholder_text = "Custom Palette"
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PaletteOptions" type="OptionButton" parent="SpriteEditor/SidePanel/Palette"]
+layout_mode = 0
+anchor_top = 0.0816322
+anchor_right = 1.0
+anchor_bottom = 0.163265
+metadata/_edit_use_anchors_ = true
 
 [node name="Brushes" type="Control" parent="SpriteEditor/SidePanel"]
 anchors_preset = 0
@@ -476,7 +507,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="MethedOutGodot" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.881944
+anchor_top = 0.790123
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+texture = ExtResource("9_21mju")
+expand_mode = 2
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="TextureScreen/Reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="SpriteEditor/SidePanel/Palette/SavePalette" to="SpriteEditor/SidePanel/Palette" method="save_palette"]
+[connection signal="item_selected" from="SpriteEditor/SidePanel/Palette/PaletteOptions" to="SpriteEditor/SidePanel/Palette" method="palette_options_item_selected"]
 [connection signal="item_selected" from="SpriteEditor/SidePanel/Brushes/BrushType" to="SpriteEditor" method="brush_type_selected"]
 [connection signal="item_selected" from="SpriteEditor/SidePanel/Brushes/BrushType2" to="SpriteEditor" method="brush_type_selected"]
 [connection signal="value_changed" from="SpriteEditor/SidePanel/Brushes/BrushSize" to="SpriteEditor" method="_on_brush_size_value_changed"]

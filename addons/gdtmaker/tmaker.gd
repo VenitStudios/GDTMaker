@@ -27,8 +27,8 @@ func _process(delta: float) -> void:
 func load_textures_for_screen():
 	textures.clear()
 	texture_container = get_node_or_null("TextureScreen/ExistingList/ScrollContainer/TextureGridContainer")
-	var source_directories = ProjectSettings.get_setting("TMaker/texture_paths")
-	var allowed_extensions = ProjectSettings.get_setting("TMaker/texture_extensions")
+	var source_directories = ProjectSettings.get_setting("TMaker/general/texture_paths")
+	var allowed_extensions = ProjectSettings.get_setting("TMaker/general/texture_extensions")
 	for directory : String in source_directories:
 		if not directory.ends_with("/"): continue
 		var files = DirAccess.get_files_at(directory)
