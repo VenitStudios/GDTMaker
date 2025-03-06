@@ -3,5 +3,3 @@
 Sprite/Texture Editor Plugin For Godot 4.4. 
 
 it may work in prior versions, however i developed it in 4.4.stable so your mileage may vary.
-
-it should be mentioned, Palettes dont get stored but it's probably an easy thing to implement.
