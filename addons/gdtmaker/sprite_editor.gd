@@ -35,6 +35,7 @@ func load_image(path : String):
 	quit()
 	show()
 	current_image = ResourceLoader.load(path).get_image()
+	if current_image.is_compressed(): current_image.decompress()
 	update_texture_rect()
 
 
